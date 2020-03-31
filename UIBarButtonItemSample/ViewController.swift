@@ -12,9 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func pushButton(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "NextViewController", bundle: nil)
+        guard let nextView = storyboard.instantiateViewController(withIdentifier: "Next") as? NextViewController else { return }
+        navigationController?.pushViewController(nextView, animated: true)
+    }
 }
 
